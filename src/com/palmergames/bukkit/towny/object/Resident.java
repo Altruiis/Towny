@@ -44,6 +44,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -865,5 +866,10 @@ public class Resident extends TownyObject implements InviteReceiver, EconomyHand
 	public Audience audience() {
 		Player player = getPlayer();
 		return player == null ? Audience.empty() : Towny.getAdventure().player(player);
+	}
+
+	@NotNull
+	public Locale locale() {
+		return Translation.getLocale(this);
 	}
 }
