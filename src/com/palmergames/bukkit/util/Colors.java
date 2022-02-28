@@ -3,10 +3,8 @@ package com.palmergames.bukkit.util;
 import com.palmergames.bukkit.towny.utils.TownyComponents;
 import net.kyori.adventure.text.Component;
 import org.bukkit.ChatColor;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import com.palmergames.bukkit.towny.Towny;
 import com.palmergames.bukkit.towny.TownySettings;
 import com.palmergames.bukkit.towny.object.Nation;
 import com.palmergames.bukkit.towny.object.Town;
@@ -93,9 +91,7 @@ public class Colors {
 	}
 
 	public static String translateColorCodes(String input) {
-		String out = translateLegacyCharacters(input);
-
-		return StringMgmt.translateHexColors(out);
+		return StringMgmt.translateHexColors(translateLegacyCharacters(input));
 	}
 	
 	private static String translateLegacyCharacters(String input) {
